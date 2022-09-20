@@ -15,7 +15,7 @@ Once you have arrived at the app, you will notice that each calendar entry is co
 
 Link to live repo: https://github.com/JamesJPorter/Day-Planner-JP
 
-![screenshot of deployed page](Assets\images\deployed-app.png)
+![screenshot of deployed page](./Assets/deployed-app.png)
     
 
 ## Credits

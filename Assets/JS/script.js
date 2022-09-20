@@ -55,43 +55,43 @@ function colorCoding() {
 function populateCalendar() {
   for (var i = 0; i < timeIndex; i++) {
     var startTime = i + 8;
-    var hourlyTime = moment(startTime, "hh a").format("h:mm a");
-    var calendarForm = $("<form></form>");
-    var calendarTime = $("<label></label>");
-    var calendarInfo = $("<input></input>");
-    var saveBtn = $("<button></button>");
-    var saveIcon = $("<i></i>");
     if (calendarStructure) {
       calendarStructure.forEach(function (entry, idx) {
-        if (calendarStructure[idx].hourIndex === startTime) {
+        if (entry[idx].hourIndex === startTime) {
           calendarTime.attr({ class: "col-1 hour", name: "time", for: "hr1" });
           calendarInfo.attr({
             class: "col-10 description textarea",
             type: "text",
             name: "hr1",
           });
-          saveBtn.attr({ class: "saveBtn col-1", type: "submit" });
-          calendarForm.attr("class", "row time-block");
-          calendarForm.attr("data-hour", startTime);
-          saveIcon.attr("class", "fas fa-save");
+          var hourlyTimeEdit = moment(startTime, "hh a").format("h:mm a");
+          var calendarFormEdit = $("<form></form>");
+          var calendarTimeEdit = $("<label></label>");
+          var calendarInfoEdit = $("<input></input>");
+          var saveBtnEdit = $("<button></button>");
+          var saveIconEdit = $("<i></i>");
+          saveBtnEdit.attr({ class: "saveBtn col-1", type: "submit" });
+          calendarFormEdit.attr("class", "row time-block");
+          calendarFormEdit.attr("data-hour", startTime);
+          saveIconEdit.attr("class", "fas fa-save");
 
           calendarContainer.append(calendarForm);
-          calendarTime.text(hourlyTime);
-          calendarForm.append(calendarTime);
-          calendarInfo.text(calendarStructure[idx].hourTask);
+          calendarTimeEdit.text(hourlyTimeEdit);
+          calendarFormEdit.append(calendarTimeEdit);
+          calendarInfoEdit.val(calendarStructure[idx].hourTask);
           console.log(calendarStructure[idx].hourTask);
-          calendarForm.append(calendarInfo);
-          calendarForm.append(saveBtn);
-          saveBtn.append(saveIcon);
+          calendarFormEdit.append(calendarInfoEdit);
+          calendarFormEdit.append(saveBtnEdit);
+          saveBtnEdit.append(saveIconEdit);
         }
       });
     }
-    // var hourlyTime = moment(startTime, "hh a").format("h:mm a");
-    // var calendarForm = $("<form></form>");
-    // var calendarTime = $("<label></label>");
-    // var calendarInfo = $("<input></input>");
-    // var saveBtn = $("<button></button>");
-    // var saveIcon = $("<i></i>");
+    var hourlyTime = moment(startTime, "hh a").format("h:mm a");
+    var calendarForm = $("<form></form>");
+    var calendarTime = $("<label></label>");
+    var calendarInfo = $("<input></input>");
+    var saveBtn = $("<button></button>");
+    var saveIcon = $("<i></i>");
 
     calendarTime.attr({ class: "col-1 hour", name: "time", for: "hr1" });
     calendarInfo.attr({
